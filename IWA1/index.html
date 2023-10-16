@@ -14,6 +14,8 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap"
       rel="stylesheet"
     />
+
+    <script src="/interactive-web-apps/IWA1/scripts.js" defer></script>
   </head>
   <body>
     <header class="header">
@@ -42,10 +44,16 @@
     </aside> -->
 
     <main class="counter">
-      <input class="counter__value" value="0" />
+      <input class="counter__value" data-key="number" readonly value="0" />
+
       <div class="counter__actions">
-        <button class="counter__button counter__button_first">-</button>
-        <button class="counter__button">+</button>
+        <button
+          data-key="subtract"
+          class="counter__button counter__button_first"
+        >
+          -
+        </button>
+        <button data-key="add" class="counter__button">+</button>
       </div>
     </main>
 
