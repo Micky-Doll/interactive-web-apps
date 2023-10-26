@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Solutions</title>
+  </head>
+  <body></body>
+</html>
+
+<!-- 
+Why does the code not work?
+
+     The script file was not correctly linked in the HTML document
+     Spelling errors in HTML and JS files
+     Script tag not closed
+     scripts.js runs before index.html thus the 'footer' element does not yet exist
+
+
+ What changes do you need to make to achieve the intended behaviour?
+
+     Spelling error in <scripts src=""> tag
+     </scripts> missing
+     <title></title> missing
+     Spelling error 'form' to 'from' in scripts.js 
+     I placed 'company' and 'year' in {} as they are being sourced from the same file
+     Used 'defer' to load JS and HTML simultaneously; JS file only executes after the HTML is done rendering
+     Added HTML boilerplate text for preference
+
+Are there any other ways in which it can be solved?
+
+     You could place the <script> tag at the bottom of the <body> in the HTML file to force the latter to fully render before the JavaScript is loaded
+     You could use the 'DOMContentLoaded' event which tells your <script> to execute only once your HTML has been parsed
+    
+-->
