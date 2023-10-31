@@ -30,18 +30,20 @@ const result = `\n${leoName} ${leoSurname} (Owed: ${leoOwed})\n${sarahName} ${sa
 
 console.log(result);
 
-// \n creates line-breaks
-// parseFloat parses decimal values not just whole numbers.
-// .toFixed is going to set to how many decimals the value will show.
-// -parseFloat negates the negative value
-// Why did they put so many spaces after "Sarah"
-// parseInt is just going to give NaN on R
-// ${} to reference variables properly in template string
+/*
+- \n creates line-breaks
+- parseFloat parses decimal values not just whole numbers.
+- .toFixed is going to set to how many decimals the value will show.
+- -parseFloat negates the negative value
+- Why did they put so many spaces after "Sarah"
+- parseInt is just going to give NaN on R
+- ${} to reference variables properly in template string
 
-// .replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1 ') - Regex method, manipulate text based on patterns
+- .replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1 ') - Regex (regular expression) method, manipulate text based on patterns
 
-// function formatNumberWithSpaceSeparator(number) {
-//   return number.toLocaleString("en-US", { useGrouping: false });
-// }
+- function formatNumberWithSpaceSeparator(number) {
+-   return number.toLocaleString("en-US", { useGrouping: false });
+ }
 
-// How did they want us to do this?
+ How did they want us to do this?
+*/
