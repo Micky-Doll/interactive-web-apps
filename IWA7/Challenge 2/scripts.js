@@ -22,3 +22,7 @@ console.log(message);
 //   } else {
 //     console.log("Good Morning!");
 //  }
+
+// Example by coach:
+// `Good Morning${nickname || firstname ? "," : ""}${
+//  nickname || firstname || ""}!`
