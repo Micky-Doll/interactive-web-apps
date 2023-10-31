@@ -26,11 +26,15 @@ const totalOwed = `R ${(
   -parseFloat(leoBalance) - parseFloat(sarahBalance)
 ).toFixed(2)}`;
 
-const result = `\n${leoName} ${leoSurname} (Owed: ${leoOwed})\n${sarahName} ${sarahSurname} (Owed: ${sarahOwed})\n${divider}\nTotal amount owed: ${totalOwed}\n${divider}`;
+const result = `\n${leoName} ${leoSurname.trim()} (Owed: ${leoOwed})\n${sarahName.trim()} ${sarahSurname} (Owed: ${sarahOwed})\n${divider}\nTotal amount owed: ${
+  totalOwed.slice(0, 4) + " " + totalOwed.slice(4)
+}}\n${divider}`;
 
 console.log(result);
 
 /*
+- put variables, expressions, values, into a string - string interpolation
+- .trim() removes the extra spaces made after the names in the example text
 - \n creates line-breaks
 - parseFloat parses decimal values not just whole numbers.
 - .toFixed is going to set to how many decimals the value will show.
@@ -38,11 +42,9 @@ console.log(result);
 - Why did they put so many spaces after "Sarah"
 - parseInt is just going to give NaN on R
 - ${} to reference variables properly in template string
+- Don't need to use + signs in template literal
 
-- .replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1 ') - Regex (regular expression) method, manipulate text based on patterns
-
-- function formatNumberWithSpaceSeparator(number) {
--   return number.toLocaleString("en-US", { useGrouping: false });
+- function formatNumberWithSpaceSeparator(number) { return number.toLocaleString("en-US", { useGrouping: false });
  }
 
  How did they want us to do this?
