@@ -41,6 +41,7 @@ console.log(leo, leo.address["postal-code"]);
 console.log(sarah, sarah.address["postal-code"]);
 
 /*
+- Camel case is preferred method to deal with invalid special characters i.e accessId and postalCode
 - Question: What do you call it when you turn a key name into a string? How does key syntax operate?
 - Objects: group related data and functionalities together
 - Key (strings/symbols) - value
