@@ -54,8 +54,6 @@ const futureId = 9;
 // Do not change code above this comment
 
 /*
- check whether the new date is earlier than the current date, if yes log true else log false
- midnight is before 13:25 so log 'new date is earlier: true' in console
  only if the date is earlier should it change to copied
  user should be alerted to what has changed before they are applied to the holidays object
  if a value has not changed it should log false alternatively log the new value
@@ -78,11 +76,11 @@ const copied = { ...holidays[christmas] };
 copied.name = "X-mas";
 copied.date.setHours(0, 0);
 
-// check whether the date is earlier
+// check whether the date is earlier (<) comparison | should log true
 const newDateEarlier = copied.date < holidays[christmas].date ? true : false;
 console.log("New date is earlier:", newDateEarlier);
 
-//
+/*
 
 console.log(holidays.futureId.name || "ID {futureId} not created yet");
 
@@ -138,3 +136,4 @@ console.log("{lastDay}/{lastMonth}/{currentYear}");
 
 const randomHoliday = holidays[Math.random];
 console.log(randomHoliday.date);
+*/
