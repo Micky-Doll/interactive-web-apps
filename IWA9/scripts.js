@@ -29,16 +29,25 @@ const rent = {
 
 // You can change below however you want
 
-const taxPercentage = parseFloat(tax[913]); // Tax is a string; turn a string into a number
+const taxPercentage = parseFloat(tax[913].slice(0, -1)); // Tax is a string; turn a string into a number
+// try parseInt no slice
 const taxDecimal = taxPercentage / 100;
 
-const TaxAmount = salary * taxDecimal; // You got percentage and decimal mixed up, that's why it didn't log
+const TaxAmount = salary * taxDecimal; // You got percentage and decimal mixed up
 
-const rentKey = `${lodging}-${size}`;
+const rentKey = `${size}-${lodging}`;
 const rentAmount = rent[rentKey];
 
 const totalExpenses = expenses.transport + expenses.food + rentAmount; // use object properties not (), () calls variable
 
 const finalTotal = salary - TaxAmount - totalExpenses;
 
+console.log(finalTotal);
+
 console.log(finalTotal.toFixed(2));
+
+// const taxAsDecimal = tax.913 / 100
+// const startingAfterTax = salary * 1 - taxAsDecimal
+// const type = lodging + size
+// const balance = expenses(transport) - expenses(food) - expenses(rent.type)
+// console.log(balance)
