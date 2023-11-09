@@ -47,3 +47,4 @@ status3.textContent =
   order3.getAttribute("data-delivered") === "true" ? "Delivered" : "Pending";
 
 // LINK YOUR JAVASCRIPT PROPERLY. PLEASE.
+// Can also use dataset

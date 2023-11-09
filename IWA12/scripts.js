@@ -43,6 +43,17 @@ books.forEach(() => {
   const checkoutButton = book.querySelector(".checkout");
   const checkinButton = book.querySelector(".checkin");
 
+  /*
+ Coach recommends: If things have the same shape we put them into an object; we reference e.g books[1].status
+const books = {
+    1.: {
+        status: document.querySelector(#book1 .status"),
+    }
+}
+
+    books[1].checkin.style.color = ""
+    The blank will mean there is no colour
+ */
   const statusText = statusElement.textContent.trim().replace("Status:", "");
   const statusDisplay = STATUS_MAP[statusText];
 

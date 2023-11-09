@@ -54,11 +54,6 @@ const futureId = 9;
 // Do not change code above this comment
 
 /*
- only if the date is earlier should it change to copied
- user should be alerted to what has changed before they are applied to the holidays object
- if a value has not changed it should log false alternatively log the new value
- log the following: ID change: false, name change: x-mas, date change 25/12/2023
- After fixing the above issue, you should also output the following to the console:
  The first holiday in the year as date, formatted as DD/MM/YYYY . This means that the match (New Years Day) will look something like 01/01/2030 if the year is 2030
  The last holiday in the year as date, formatted as DD/MM/YYYY . This means that the match (Day of Goodwill) will look something like 26/12/2030 if the year is 2030
  A randomly selected holiday date in the same format as above. Note that each time the code runs a new date should be randomly selected.
@@ -66,42 +61,40 @@ const futureId = 9;
 
 // Check whether an item has been assigned to the 9 key, if so, log the name of the holiday, if nothing is assigned, log ID 9 not created yet
 if (holidays[futureId]) {
-  console.log(holidays[futureId].name);
+  console.log(holidays[futureId]?.name);
 } else {
   console.log(`ID ${futureId} not created yet`);
 }
+// Coach Suggestion: In-line ternary operator added to ask if something exists first, he also uses || instead of writing out the if/else
 
 // create a version of the christmas object that has the date set to midnight; change the name of Christmas to X-mas
-const copied = { ...holidays[christmas] };
-copied.name = "X-mas";
+const copied = { ...holidays[christmas], name: "X-Mas" };
+// copied.name = "X-mas";
 copied.date.setHours(0, 0);
 
-// check whether the date is earlier (<) comparison | should log true
-const newDateEarlier = copied.date < holidays[christmas].date ? true : false;
-console.log("New date is earlier:", newDateEarlier);
-
-/*
-
-console.log(holidays.futureId.name || "ID {futureId} not created yet");
-
-copied = holidays.christmas;
-copied = { name: "X-mas Day" };
-correctDate = copied.date;
-correctDate.hours = 0;
-correctDate.minutes = 0;
-isEarlier = copied.date < holidays[6].date;
+// check whether the date is earlier (<) comparison | should log true It logs true!
+const isEarlier = copied.date < holidays[christmas].date;
 console.log("New date is earlier:", isEarlier);
-if (isEarlier) copied.date = correctDate;
-console.log("ID change:", holidays[christmas].id != copied.id || copied.id);
+
+// user should be alerted to what has changed before they are applied to the holidays object | !== checks if two values are not equal, if they're not equal it's true
+console.log(
+  "ID change:",
+  holidays[christmas].id !== copied.id ? copied.id : false
+);
 console.log(
   "Name change:",
-  holidays[christmas].name != copied.name || copied.name
-);
-console.log(
-  "Date change:",
-  holidays[christmas].date != copied.date || copied.date
+  holidays[christmas].name !== copied.name ? copied.name : false
 );
 
+// still says date is false
+console.log(
+  "Date change:",
+  holidays[christmas].date.getTime() !== copied.date.getTime()
+    ? copied.date
+    : false
+);
+
+holidays[0].date = new Date(holidays[0].date);
 const firstHolidayTimestamp = Math.min(
   holidays[0].date.getTime,
   holidays[1].date.getTime,
@@ -126,14 +119,15 @@ const lastHolidayTimestamp = Math.max(
   holidays[8].date.getTime
 );
 
-const firstDay = firstHolidayTimestamp.getDate;
-const firstMonth = firstHolidayTimestamp.getMonth;
-const lastDay = lastHolidayTimestamp.getDate;
-const lastMonth = lastHolidayTimestamp.getMonth;
+const firstDay = new Date(firstHolidayTimestamp);
+const firstMonth = firstDay.getMonth() + 1;
+const lastDay = new Date(lastHolidayTimestamp);
+const lastMonth = lastDay.getMonth() + 1;
 
-console.log("{firstDay}/{firstMonth}/{currentYear}");
-console.log("{lastDay}/{lastMonth}/{currentYear}");
+console.log(`${firstDay}/${firstMonth}/${currentYear}`);
+console.log(`${lastMonth}/${currentYear}`);
 
-const randomHoliday = holidays[Math.random];
+const randomHoliday = holidays[Math.floor(Math.random() * holidays.length)]; // A number between 0 and less than 9 because we've multiplied it by holidays.length
 console.log(randomHoliday.date);
-*/
+// math random will give us a number less than one and math floor will round down
+// math.floor takes it down, math.ceiling takes it up
