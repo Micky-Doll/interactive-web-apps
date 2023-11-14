@@ -80,12 +80,12 @@ const extractBiggest = () => {
     const biggest = newList.reduce(
         (acc, current) => {
             if (current[current.length -1] > acc[acc.length -1]) return current;
-            return acc
+            return acc;
         },
         [0]
     );
     return biggest.pop();
-    };
+};
  
 
 
