@@ -10,13 +10,13 @@ const logCalc = () => {
   const isString = typeof calculated === "string";
   const calculatedAsNumber = isString ? parseInt(calculated) : calculated;
   calculated = calculatedAsNumber + 1;
-  return calculated; // Return lets us use the updated value outside of the scope of the function.
 };
 
 console.log(calculated);
 
 const calcUser = () => {
   logCalc();
+
   if (calculated > 2) user = "John";
   if (calculated > 2) state = "requesting";
   if (calculated > 3) state = "idle";
