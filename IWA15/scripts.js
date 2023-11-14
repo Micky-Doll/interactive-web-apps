@@ -90,4 +90,4 @@ const extractBiggest = () => {
 
 
  Research Higher Order functions and Array functions
- Reduce = Loops through a list, every time it goes through a new value it runs a function on it
+ Reduce = Loops through a list, every time it goes through a new value it runs a function on it */
