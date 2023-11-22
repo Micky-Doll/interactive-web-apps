@@ -33,7 +33,7 @@ const createData = () => {
   const startDay = current.getDay();
   const daysInMonth = getDaysInMonth(current);
 
-  const weeks = createArray(5);
+  const weeks = createArray(5); // daysInMonth / 7 math.ceiling ?
   const days = createArray(7);
   const result = [];
 
