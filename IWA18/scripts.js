@@ -64,13 +64,13 @@ const handleAddSubmit = (event) => {
   event.preventDefault();
   const title = html.add.title.value;
   const table = html.add.table.value;
-
-  if (title && table) {
-    const newOrder = createOrderData({ title, table, column: "ordered" });
-    const orderHtml = createOrderHtml(newOrder);
-    html.columns.ordered.appendChild(orderHtml);
-    html.add.overlay.open = false;
-  }
+  const orderData = createOrderData({
+    title: title,
+    table: table,
+    column: "ordered",
+  });
+  const orderHtml = createOrderHtml(orderData);
+  html.columns["ordered"].appendChild(orderHtml);
 };
 
 const handleEditToggle = (event) => {
